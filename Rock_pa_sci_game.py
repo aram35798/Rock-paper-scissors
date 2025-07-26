@@ -2,22 +2,18 @@ while True:
     Player1 = input("Player 1: Rock, paper, or scissors? ").lower()
     Player2 = input("Player 2: Rock, paper, or scissors? ").lower()
 
-    Valid_answer = ("rock", "paper", "scissors")
+    valid_answers = ("rock", "paper", "scissors")
 
-    if Player1 not in Valid_answer or Player2 not in Valid_answer:
-        print("Fuck dude")
+    if Player1 not in valid_answers or Player2 not in valid_answers:
+        print("Not valid")
         continue
 
     if Player1 == Player2:
-        print("fuck")
+        print("Tie")
 
-    elif Player1 == ("rock" and Player2 == "scissors"):
-        print("Player 1")
+    elif (Player1 == "rock" and Player2 == "scissors") or \
+         (Player1 == "paper" and Player2 == "rock") or \
+         (Player1 == "scissors" and Player2 == "paper"):
+        print("Player 1 won")
     else:
-        print("2 won")
-''' if player 1:
-        pick rock paper or scissor
-    now player 2 pick 
-    now compare them 
-    compare them to different events and see which one it matches
-'''
+        print("Player 2 won")
